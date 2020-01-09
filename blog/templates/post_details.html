@@ -1,0 +1,55 @@
+{% extends 'base_blog.html' %}
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+{% block title %}
+    {{ post.title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <article>
+        <header class="header text-center">
+            <h1 class="header-h1">{{ post.title }}</h1>
+        </header>
+        <div class="background-bar"></div>
+        <section class="container-fluid main-body">
+            <section class="row">
+                <div class="hidden-xs col-sm-1 col-md-2"></div>
+                <div class="col-xs-12 col-sm-10 col-md-8">
+                    <div class="content-holder">
+                        <div class="content-description">
+
+                            <div class="author-name">
+                                <h3>Author Name</h3>
+                            </div>
+                            <div class="row blog-info">
+                                <div class="col-xs-12 col-sm-6">
+                                    <span class="lead text-muted"><i
+                                            class="fa fa-clock-o"></i> Published: {{ post.date_pub }}</span>
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+                                    <span class="lead text-muted"><i class="fa fa-tags"></i> some, tags, here</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-body">
+                            <p>{{ post.body }}</p>
+                            <p>
+                            <blockquote>
+                                Fusce pharetra id libero et ornare. Pellentesque libero dui, cursus in purus eget,
+                                fermentum commodo nibh. Integer dictum neque eu lobortis dapibus. Donec ex libero,
+                                vehicula a nisl in, viverra rutrum arcu. In hac habitasse platea dictumst. Nunc aliquam
+                                sapien iaculis venenatis dictum. Vivamus facilisis libero a urna rutrum placerat. Donec
+                                semper, quam vel porta tempor, nunc augue blandit est, sed finibus eros augue et velit.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam vel mi et mauris
+                                hendrerit bibendum eget sit amet neque. Nam at mattis metus.
+                            </blockquote>
+                            </p>
+                            <p>{{ post.body }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden-xs col-sm-1 col-md-2"></div>
+            </section>
+        </section>
+    </article>
+{% endblock %}
