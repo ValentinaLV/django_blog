@@ -8,34 +8,20 @@
 
     <section class="container">
         <div class="jumbotron">
-            <h1>Bootstrap Blog Template</h1>
-            <p>This responsive Blog template is done in Bootstrap 3 with no extra CSS or Javascript</p>
+            <h1>Python Blog</h1>
+            <p>Beautiful is better than ugly.
+                Explicit is better than implicit.
+                Simple is better than complex.
+                Complex is better than complicated.</p>
         </div>
     </section>
 
     <div class="container">
+
         <div class="col-sm-6 col-md-8 col-lg-8">
             <div class="row">
-
                 {% for post in posts %}
-
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <img src="https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?h=350&auto=compress&cs=tinysrgb"
-                                     alt="" class="img-thumbnail img-responsive">
-                                <p class="text-muted">By <span class="glyphicon glyphicon-user"
-                                                               aria-hidden="true"></span>
-                                    Lorem
-                                    Ipsum | <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                                    {{ post.date_pub }}
-                                </p>
-                                <h3>{{ post.title }}</h3>
-                                <p>{{ post.body|truncatewords:15 }}</p>
-                                <a href="{% url 'post_details_url' slug=post.slug %}" class="btn btn-default">Read more...</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% include 'includes/post_body_card.html' %}
                 {% endfor %}
             </div>
             <hr>
@@ -47,7 +33,6 @@
                     </ul>
                 </nav>
             </div>
-
         </div>
 
         <div class="col-sm-6 col-md-4 col-lg-4">
@@ -68,15 +53,16 @@
                     </form>
 
                     <h4 class="text-center">About me!</h4>
-                    <img src="https://s3.amazonaws.com/myblog--flask-bucket/photos/comicavatar_500x500.jpg" alt=""
+                    <img src="https://cdn.shopify.com/s/files/1/0613/3489/products/BH_6x8Album_AllAboutMe_FEATURED_grande.jpg?v=1574662552" alt=""
                          class="img-thumbnail img-responsive">
-                    <h5 class="text-center">Victor Santiago</h5>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the
-                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type
-                        and scrambled it to make a type specimen book.</p>
-
+                    <h5 class="text-center">Valentyna Lysenok</h5>
+                    <p>
+                        I’ve already had almost 4 years of experience in Salesforce.com, BI system implementation,
+                        business processes analysis and 8-month experience in the EDI system. Hands-on software
+                        troubleshooting experience. Proactively identify opportunities, create solutions and
+                        execute plans to optimize business performance. Aware in Agile Software Methodology
+                        with the SCRUM process.
+                    </p>
                     <h4 class="text-center">Popular Posts!</h4>
                     <div class="row">
                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -86,7 +72,7 @@
                         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                             <h5>Images by pexels.com</h5>
                             <p class="text-muted"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                                Jan/21/2018</p>
+                                Jan/09/2020</p>
                         </div>
                     </div>
                     <hr>
@@ -98,7 +84,7 @@
                         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                             <h5>Images by pexels.com</h5>
                             <p class="text-muted"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                                Jan/21/2018</p>
+                                Jan/09/2020</p>
                         </div>
                     </div>
                     <hr>
@@ -110,7 +96,7 @@
                         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                             <h5>Images by pexels.com</h5>
                             <p class="text-muted"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                                Jan/21/2018</p>
+                                Jan/09/2020</p>
                         </div>
                     </div>
                     <hr>
@@ -122,7 +108,7 @@
                         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                             <h5>Images by pexels.com</h5>
                             <p class="text-muted"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                                Jan/21/2018</p>
+                                Jan/09/2020</p>
                         </div>
                     </div>
                     <hr>
@@ -134,7 +120,7 @@
                         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                             <h5>Images by pexels.com</h5>
                             <p class="text-muted"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                                Jan/21/2018</p>
+                                Jan/09/2020</p>
                         </div>
                     </div>
                     <hr>

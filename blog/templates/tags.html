@@ -1,0 +1,25 @@
+{% extends 'base_blog.html' %}
+
+
+{% block title %}
+    Tags
+{% endblock %}
+
+{% block content %}
+<div class="item">
+    <section class="container">
+        <div class="jumbotron">
+            <h1>Tags</h1>
+        </div>
+    </section>
+    <div class="item-content-block tags">
+        {% for tag in tags %}
+    	    <span class="badge tag-badge-details">
+                <a href="{{ tag.get_absolute_url }}" class="link-badge" style="text-decoration: none;">
+                    {{ tag.title }}
+                </a>
+            </span>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -7,10 +7,40 @@ section {
     width: 100%;
 }
 
+.p-size {
+    font-size: 16px;
+}
+
+.tags {
+    margin: 15% 0 15% 0;
+    text-align: center;
+}
+
+.tag-badge-details {
+    font-size: 25px;
+}
+
+.tag-badge {
+    font-size: 12px;
+}
+
+.card-tag {
+    margin: 5px 0 15px 5px;
+}
+
+.tag-badge-post-body {
+    font-size: 15px;
+}
+
+.link-badge {
+    color: #fff;
+    text-decoration: none;
+}
+
 .banner-section {
-    background-image: url("https://static.pexels.com/photos/373912/pexels-photo-373912.jpeg");
+    background-image: url("https://28j4hc23gg8m166m6828ik29-wpengine.netdna-ssl.com/wp-content/uploads/2019/07/AdobeStock_189224831.jpeg");
     background-size: cover;
-    height: 380px;
+    height: 65%;
     left: 0;
     position: absolute;
     top: 0;
@@ -18,7 +48,7 @@ section {
 }
 
 .post-title-block {
-    padding: 100px 0;
+    padding: 150px 0;
 }
 
 .post-title-block h1 {
@@ -44,6 +74,7 @@ section {
 /*/blog/post/<slug>*/
 .header {
     margin-top: 0;
+    margin-bottom: 25px;
     background: url("https://thetallesttulip.com/wp-content/uploads/blog-cover-overlay.jpg");
     min-height: 250px;
     background-size: cover;
@@ -57,22 +88,22 @@ section {
     display: table-cell;
     vertical-align: middle;
     font-size: 3em;
-    text-shadow: 2px 3px rgba(0,0,0,0.75);
+    text-shadow: 2px 3px rgba(0, 0, 0, 0.75);
 }
 
 .background-bar {
     background: #dedede;
     height: 90px;
     -webkit-box-shadow: inset 0px 4px 12px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    inset 0px 4px 12px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         inset 0px 4px 12px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: inset 0px 4px 12px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: inset 0px 4px 12px 0px rgba(50, 50, 50, 0.75);
 }
 
 .main-body {
     background: #ffffff;
     -webkit-box-shadow: 0px -4px 14px 0px rgba(50, 50, 50, 0.35);
-    -moz-box-shadow:    0px -4px 14px 0px rgba(50, 50, 50, 0.35);
-    box-shadow:         0px -4px 14px 0px rgba(50, 50, 50, 0.35);
+    -moz-box-shadow: 0px -4px 14px 0px rgba(50, 50, 50, 0.35);
+    box-shadow: 0px -4px 14px 0px rgba(50, 50, 50, 0.35);
 }
 
 .content-holder {
@@ -89,23 +120,26 @@ section {
     height: 130px;
     padding: 10px;
     -webkit-box-shadow: 0px 0px 12px 4px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    0px 0px 12px 4px rgba(50, 50, 50, 0.75);
-    box-shadow:         0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+    box-shadow: 0px 0px 12px 4px rgba(50, 50, 50, 0.75);
 }
 
 .author-social {
     position: absolute;
     margin-top: -35px;
 }
+
 .author-social-left {
-    left : 0;
+    left: 0;
     width: 40%;
     text-align: right;
 }
+
 .author-social-right {
-    right : 0;
+    right: 0;
     width: 40%;
 }
+
 .author-social img {
     background: #e8e8e8;
     border-radius: 50%;
@@ -117,12 +151,14 @@ section {
     width: 100px;
     border: 4px solid #e8e8e8;
     -webkit-box-shadow: 0px 0px 12px 4px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    0px 0px 12px 4px rgba(50, 50, 50, 0.75);
-    box-shadow:         0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+    box-shadow: 0px 0px 12px 4px rgba(50, 50, 50, 0.75);
 }
+
 .author-name {
-    text-align:center;
+    text-align: center;
 }
+
 .blog-info {
     text-align: center;
 }
@@ -135,25 +171,30 @@ section {
     color: #303030;
 }
 
-@media(max-width:768px){
+@media (max-width: 768px) {
     header {
         min-height: 300px;
     }
+
     .author-avatar {
         margin-top: -50px;
     }
-	.author-avatar img {
-	    width: 75px;
-	}
-	.author-name h3 {
-	    font-size: 1.2em;
-	}
-	.author-social {
-	    margin-top: -25px;
-	}
-	.author-social img {
-	    width: 32px;
-	}
+
+    .author-avatar img {
+        width: 75px;
+    }
+
+    .author-name h3 {
+        font-size: 1.2em;
+    }
+
+    .author-social {
+        margin-top: -25px;
+    }
+
+    .author-social img {
+        width: 32px;
+    }
 }
 
 /*/end blog/post/<slug>*/
@@ -204,4 +245,22 @@ section {
 }
 
 /*/end blog*/
+
+/*/tags*/
+.item {
+    color: #48453d;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.block-title {
+    color: #48453d;
+    margin-bottom: 0px;
+    font-size: 18px;
+    margin-top: 0px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/*/end tags*/
 

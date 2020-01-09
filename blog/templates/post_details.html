@@ -19,32 +19,33 @@
                         <div class="content-description">
 
                             <div class="author-name">
-                                <h3>Author Name</h3>
+                                <h3>Author: Valentyna Lysenok</h3>
                             </div>
                             <div class="row blog-info">
                                 <div class="col-xs-12 col-sm-6">
-                                    <span class="lead text-muted"><i
-                                            class="fa fa-clock-o"></i> Published: {{ post.date_pub }}</span>
+                                    <span class="lead text-muted"><i class="fa fa-clock-o"></i>
+                                        Published: {{ post.date_pub }}
+                                    </span>
                                 </div>
                                 <div class="col-xs-12 col-sm-6">
-                                    <span class="lead text-muted"><i class="fa fa-tags"></i> some, tags, here</span>
+                                    <span class="lead text-muted"><i class="fa fa-tags"></i>
+                                        {% for tag in post.tags.all %}
+                                            <span class="badge tag-badge-post-body">
+                                                <a href="{{ tag.get_absolute_url }}" class="link-badge" style="text-decoration: none;">
+                                                    {{ tag.title }}
+                                                </a>
+                                            </span>
+                                        {% endfor %}
+                                    </span>
                                 </div>
                             </div>
                         </div>
                         <div class="content-body">
-                            <p>{{ post.body }}</p>
                             <p>
                             <blockquote>
-                                Fusce pharetra id libero et ornare. Pellentesque libero dui, cursus in purus eget,
-                                fermentum commodo nibh. Integer dictum neque eu lobortis dapibus. Donec ex libero,
-                                vehicula a nisl in, viverra rutrum arcu. In hac habitasse platea dictumst. Nunc aliquam
-                                sapien iaculis venenatis dictum. Vivamus facilisis libero a urna rutrum placerat. Donec
-                                semper, quam vel porta tempor, nunc augue blandit est, sed finibus eros augue et velit.
-                                Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam vel mi et mauris
-                                hendrerit bibendum eget sit amet neque. Nam at mattis metus.
+                                {{ post.body }}
                             </blockquote>
                             </p>
-                            <p>{{ post.body }}</p>
                         </div>
                     </div>
                 </div>
