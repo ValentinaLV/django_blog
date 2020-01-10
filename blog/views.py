@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View
-from django.shortcuts import get_object_or_404
 from .models import Post, Tag
 from .utils import ObjectDetailMixin
 from .forms import TagForm, PostForm
@@ -45,6 +44,10 @@ class PostCreate(View):
         form = PostForm()
         return render(request, 'post_create.html', context={'form': form})
 
+    def post(self, request):
+        bound_form = PostForm(request.POST)
 
-
-
+        if bound_form.is_valid():
+            new_post = bound_form.save()
+            return redirect(new_post)
+        return render(request, 'post_create.html', context={'form': bound_form})
