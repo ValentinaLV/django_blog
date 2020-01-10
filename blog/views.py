@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View
+from django.urls import reverse
 from .models import Post, Tag
-from .utils import ObjectDetailMixin, ObjectCreateMixin, ObjectUpdateMixin
+from .utils import ObjectDetailMixin, ObjectCreateMixin, ObjectUpdateMixin, ObjectDeleteMixin
 from .forms import TagForm, PostForm
 
 
@@ -31,6 +32,12 @@ class PostUpdate(ObjectUpdateMixin, View):
     template = 'post_update.html'
 
 
+class PostDelete(ObjectDeleteMixin, View):
+    model = Post
+    template = 'post_delete.html'
+    redirect_url = 'posts_url'
+
+
 class TagDetail(ObjectDetailMixin, View):
     model = Tag
     template = 'tag_details.html'
@@ -45,16 +52,17 @@ class TagUpdate(ObjectUpdateMixin, View):
     model = Tag
     model_form = TagForm
     template = 'tag_update.html'
+
+
+class TagDelete(ObjectDeleteMixin, View):
+    model = Tag
+    template = 'tag_delete.html'
+    redirect_url = 'tags_url'
     # def get(self, request, slug):
     #     tag = Tag.objects.get(slug__iexact=slug)
-    #     bound_form = TagForm(instance=tag)
-    #     return render(request, 'tag_update.html', context={'form': bound_form, 'tag': tag})
+    #     return render(request, 'tag_delete.html', context={'tag': tag})
     #
     # def post(self, request, slug):
     #     tag = Tag.objects.get(slug__iexact=slug)
-    #     bound_form = TagForm(request.POST, instance=tag)
-    #
-    #     if bound_form.is_valid():
-    #         new_tag = bound_form.save()
-    #         return redirect(new_tag)
-    #     return render(request, 'tag_update.html', context={'form': bound_form, 'tag': tag})
+    #     tag.delete()
+    #     return redirect(reverse('tags_url'))
