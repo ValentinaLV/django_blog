@@ -62,7 +62,8 @@
                 <div class="panel-body">
 
                     <h4 class="text-center">Search for Posts!</h4>
-                    <form role="Form" method="GET" action="" accept-charset="UTF-8">
+
+                    <form role="Form" method="GET" action="{% url 'posts_url' %}" accept-charset="UTF-8">
                         <div class="form-group">
                             <div class="input-group">
                                 <input class="form-control" type="text" name="search" placeholder="Search..." required/>
@@ -152,7 +153,7 @@
                     <form role="Form" method="GET" action="" accept-charset="UTF-8">
                         <div class="form-group">
                             <div class="input-group">
-                                <input class="form-control" type="text" name="search"
+                                <input class="form-control" type="text" name="email"
                                        placeholder=" sign up for our newsletter..." required/>
                                 <span class="input-group-btn">
 								<button class="btn btn-default" type="submit">Sign up</button>
