@@ -1,1 +1,27 @@
 {% extends 'base.html' %}
+
+{% block admin-panel %}
+    <div class="admin-panel align-items-center" style="
+    border: 1px solid #999999;
+    border-radius: 2px;
+    position: fixed;
+    right: 50px;
+    bottom: 30px;
+    opacity: 0.5;
+    padding: 15px;
+    ">
+        <a href="/admin" class="btn btn-light" style="display: block;">Admin</a>
+
+        <a href="{% url 'post_create_url' %}" class="btn btn-info" style="display: block;">Create Post</a>
+        <a href="{% url 'tag_create_url' %}" class="btn btn-success" style="display: block;">Create Tag</a>
+        <a href="{{ admin_object.get_update_url }}" class="btn btn-primary edit" style="
+                {% if detail %}
+                    display: block;
+                {% endif %}">Edit</a>
+        <a href="{{ admin_object.get_delete_url }}" class="btn btn-danger delete" style="
+                {% if detail %}
+                    display: block;
+                {% endif %}">Delete</a>
+    </div>
+
+{% endblock %}

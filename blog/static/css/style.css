@@ -302,3 +302,25 @@ section {
     font-weight: 600;
 }
 /*end tag-create*/
+
+.admin-panel {
+    border: 1px solid #999999;
+    border-radius: 2px;
+    position: fixed;
+    right: 50px;
+    bottom: 30px;
+    opacity: 0.5;
+    padding: 15px;
+}
+
+.admin-panel:hover {
+    opacity: 1;
+}
+
+.admin-panel a {
+    display: block;
+}
+
+a.edit, a.delete {
+    display: none;
+}
