@@ -9,7 +9,7 @@
     <form action="{{ tag.get_delete_url }}" method="post">
         {% csrf_token %}
         <h1>Are you sure you want to delete <b>{{ tag.title|title }}</b> tag?</h1>
-        <a href="{{ tag.get_absolute_url }}">Cancel</a>
+        <a href="{{ tag.get_absolute_url }}" class="btn btn-default">Cancel</a>
         <button type="submit" name="button" class="btn btn-danger">Delete</button>
     </form>
 

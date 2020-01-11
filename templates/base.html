@@ -15,21 +15,29 @@
     </title>
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-inverse navbar-static-top" role="Navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">Bootstrap Based Blog</a>
+{% block nav %}
+    <header>
+        <nav class="navbar navbar-inverse navbar-static-top" role="Navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Bootstrap Based Blog</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'home_page' %}">Home</a></li>
+                    <li><a href="{% url 'posts_url' %}">All posts</a></li>
+                    <li><a href="{% url 'tags_url' %}">Tags</a></li>
+
+                    {% if not request.user.is_authenticated %}
+                        <li><a href="/admin">Sign in</a></li>
+                    {% else %}
+                        <li><a href="/admin/logout">Logout</a></li>
+                    {% endif %}
+
+                </ul>
             </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="{% url 'home_page' %}">Home</a></li>
-                <li><a href="{% url 'posts_url' %}">All posts</a></li>
-                <li><a href="{% url 'tags_url' %}">Tags</a></li>
-                <li><a href="#">Sign in</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
+{% endblock %}
 
 {% block content %}
 
@@ -182,22 +190,37 @@
 
 {% endblock %}
 
-{% block admin-panel %}
+{% if request.user.is_superuser %}
+    <div class="admin-panel align-items-center" style="
+    border: 1px solid #999999;
+    border-radius: 2px;
+    position: fixed;
+    right: 50px;
+    bottom: 30px;
+    opacity: 0.7;
+    padding: 15px;
+    ">
+        <a href="/admin" class="btn btn-light" style="display: block;">Admin</a>
 
-{% endblock %}
-
-<footer class="navbar-inverse p-3">
-    <div class="container">
-        <ul class="social-icon animate text-center">
-            <li><a href="https://www.facebook.com/tinalysenok" title="facebook" target="_blank"><i
-                    class="fa fa-facebook"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/valentyna-lysenok/" title="linkedin" target="_blank"><i
-                    class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://www.instagram.com/valen_tina_vl/" title="instagram" target="_blank"><i
-                    class="fa fa-instagram"></i></a></li>
-        </ul>
+        {% block admin-panel %}
+        {% endblock %}
     </div>
-</footer>
+{% endif %}
+
+{% block footer %}
+    <footer class="navbar-inverse p-3">
+        <div class="container">
+            <ul class="social-icon animate text-center">
+                <li><a href="https://www.facebook.com/tinalysenok" title="facebook" target="_blank"><i
+                        class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/valentyna-lysenok/" title="linkedin" target="_blank"><i
+                        class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/valen_tina_vl/" title="instagram" target="_blank"><i
+                        class="fa fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+{% endblock %}
 
 </body>
 </html>
